@@ -1,0 +1,16 @@
+{
+  "assignments": [
+    {
+      "course": "AIA 460 Generative AI in Business",
+      "title": "Agentic AI Workflow Reflection",
+      "due_date": "2026-05-27",
+      "points": 20
+    }
+  ],
+  "announcements": [
+    {
+      "course": "AIA 460 Generative AI in Business",
+      "message": "Final project reminder"
+    }
+  ]
+}
