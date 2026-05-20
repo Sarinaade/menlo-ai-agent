@@ -144,3 +144,13 @@ if st.button("Ask Agent"):
 
             st.text(context)
 
+# =====================================
+# Footer
+# =====================================
+
+st.markdown("---")
+
+st.caption(
+    "© 2026 Menlo College AI Agent • All rights reserved • Created by Dr. Sarina Adeli"
+)
+
