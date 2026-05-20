@@ -1,0 +1,26 @@
+# Optional NeMo Agent Toolkit configuration concept.
+# Adapt this to the NAT version you install.
+# NAT supports YAML-configured workflows and tool-calling agents.
+
+llms:
+  nemotron:
+    _type: nim
+    model_name: ${NVIDIA_MODEL}
+
+functions:
+  menlo_website_search:
+    _type: menlo_website_tool
+  canvas_readonly:
+    _type: canvas_readonly_tool
+
+workflow:
+  _type: tool_calling_agent
+  llm_name: nemotron
+  tool_names:
+    - menlo_website_search
+    - canvas_readonly
+  system_prompt: |
+    You are Menlo AI Campus Agent MVP.
+    Use tools only. Do not invent Menlo policies.
+    Never expose private student records.
+    Canvas tools are read-only.
