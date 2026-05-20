@@ -5,8 +5,8 @@ import streamlit as st
 for key, value in st.secrets.items():
     os.environ[key] = str(value)
 
-from app.router import route_and_collect_context
-from app.llm import ask_nemotron
+from router import route_and_collect_context
+from llm import ask_nemotron
 
 st.set_page_config(
     page_title="Menlo College AI Agent",

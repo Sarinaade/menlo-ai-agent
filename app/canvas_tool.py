@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 import requests
-from app.config import settings
+from config import settings
 
 MOCK_PATH = Path("data/canvas_mock.json")
 

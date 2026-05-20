@@ -1,5 +1,5 @@
 from openai import OpenAI
-from app.config import settings
+from config import settings
 
 SYSTEM_PROMPT = """You are Menlo AI Campus Agent MVP.
 You answer only from provided tool context.

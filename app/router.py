@@ -1,5 +1,5 @@
-from app.canvas_tool import canvas_context
-from app.website_tool import search_menlo_website
+from canvas_tool import canvas_context
+from website_tool import search_menlo_website
 
 def route_and_collect_context(question: str) -> str:
     q = question.lower()
