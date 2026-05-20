@@ -1,5 +1,7 @@
 import os
 import streamlit as st
+from PIL import Image
+
 
 # Load Streamlit Cloud secrets into environment variables
 for key, value in st.secrets.items():
@@ -13,9 +15,17 @@ st.set_page_config(
     page_icon="🎓",
     layout="wide"
 )
+logo = Image.open("assets/Menlo_College_logo.svg
+.png")
 
-st.title("🎓 Menlo College AI Agent")
-st.caption("Powered by NVIDIA LLM API + Canvas + Menlo Knowledge Tools")
+col1, col2 = st.columns([1, 5])
+
+with col1:
+    st.image(logo, width=160)
+
+with col2:
+    st.title("Menlo College AI Agent")
+    st.caption("Powered by NVIDIA LLM API + Canvas + Menlo Knowledge Tools"))
 
 with st.sidebar:
     st.header("Agent Tools")
