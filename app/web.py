@@ -69,42 +69,8 @@ div[data-testid="stChatInput"] {
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown("""
-<style>
-.stApp {
-    background: linear-gradient(135deg, #0f172a 0%, #111827 45%, #1e1b4b 100%);
-    color: #f8fafc;
-}
-.block-container {
-    max-width: 900px;
-    padding-top: 2rem;
-}
-h1, h2, h3 {
-    color: #ffffff;
-    text-align: center;
-}
-[data-testid="stSidebar"] {
-    background: #020617;
-}
-[data-testid="stChatMessageContent"] {
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 18px;
-    padding: 14px 18px;
-    border: 1px solid rgba(255,255,255,0.12);
-}
-.stButton > button {
-    border-radius: 14px;
-    background: linear-gradient(90deg, #6366f1, #8b5cf6);
-    color: white;
-    border: none;
-    font-weight: 600;
-}
-.stButton > button:hover {
-    background: linear-gradient(90deg, #8b5cf6, #ec4899);
-    color: white;
-}
-</style>
-""", unsafe_allow_html=True)
+
+
 
 
 
