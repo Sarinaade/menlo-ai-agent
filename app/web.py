@@ -66,7 +66,23 @@ div[data-testid="stChatInput"] {
     border: 2px solid #6366f1;
     border-radius: 18px;
 }
+[data-testid="stBottom"],
+[data-testid="stBottom"] > div,
+[data-testid="stChatInput"],
+[data-testid="stChatInput"] > div {
+    background: #020617 !important;
+}
+
+[data-testid="stBottom"] {
+    border-top: 1px solid rgba(99,102,241,.25) !important;
+}
+
+iframe {
+    background: #020617 !important;
+}
+
 </style>
+
 """, unsafe_allow_html=True)
 
 
