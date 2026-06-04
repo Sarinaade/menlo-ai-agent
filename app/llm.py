@@ -22,7 +22,7 @@ def ask_nemotron(user_question: str, context: str) -> str:
     )
 
     response = client.chat.completions.create(
-        model=settings.nvidia_model,
+	model="meta/llama-3.1-8b-instruct",
         temperature=0.2,
         max_tokens=900,
         messages=[
