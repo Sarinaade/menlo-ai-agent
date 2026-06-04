@@ -2,9 +2,14 @@ import json
 import re
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
-
 import requests
 from bs4 import BeautifulSoup
+import re
+import json
+import requests
+from pathlib import Path
+from bs4 import BeautifulSoup
+
 
 SEED_URLS = [
     "https://www.menlo.edu/",
@@ -21,7 +26,14 @@ def clean(text: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 def fetch_page(url: str) -> dict:
-    html = requests.get(url, timeout=20).text
+    headers = {
+    "User-Agent": "Mozilla/5.0"
+    }
+
+    response = requests.get(url, headers=headers, timeout=20)
+    print(url, response.status_code)
+
+    html = response.text
     soup = BeautifulSoup(html, "html.parser")
     for tag in soup(["script", "style", "nav", "footer"]):
         tag.decompose()
