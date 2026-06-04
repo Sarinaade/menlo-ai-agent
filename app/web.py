@@ -1,6 +1,10 @@
 import os
-import streamlit as st
 from PIL import Image
+import streamlit as st
+from router import route_and_collect_context
+from llm import ask_nemotron
+
+
 
 # =====================================
 # Load Streamlit Secrets or Local .env
@@ -25,7 +29,7 @@ from llm import ask_nemotron
 # =====================================
 
 st.set_page_config(
-    page_title="Menlo College AI Agent",
+    page_title="Menlo College Canvas AI Agent",
     page_icon="🎓",
     layout="wide"
 )
@@ -44,7 +48,7 @@ with col1:
 with col2:
     st.title("Menlo College AI Agent")
     st.caption(
-        "Powered by NVIDIA LLM API + Canvas + Menlo Knowledge Tools"
+        "Powered by NVIDIA LLM API + Canvas"
     )
 
 # =====================================
@@ -113,36 +117,29 @@ with st.sidebar:
 # Main Chat Input
 # =====================================
 
-question = st.text_input(
-    "Ask the Menlo AI Agent:",
-    placeholder="Example: What assignments are due this week?"
-)
+if "messages" not in st.session_state:
+    st.session_state.messages = []
 
-# =====================================
-# Ask Agent Button
-# =====================================
+for msg in st.session_state.messages:
+    with st.chat_message(msg["role"]):
+        st.markdown(msg["content"])
 
-if st.button("Ask Agent"):
+question = st.chat_input("Ask Menlo AI...")
 
-    if not question.strip():
+if question:
+    st.session_state.messages.append({"role": "user", "content": question})
 
-        st.warning("Please enter a question.")
+    with st.chat_message("user"):
+        st.markdown(question)
 
-    else:
-
+    with st.chat_message("assistant"):
         with st.spinner("Thinking..."):
-
             context = route_and_collect_context(question)
-
             answer = ask_nemotron(question, context)
+            st.markdown(answer)
 
-        st.subheader("Answer")
+    st.session_state.messages.append({"role": "assistant", "content": answer})
 
-        st.success(answer)
-
-        with st.expander("Retrieved Context"):
-
-            st.text(context)
 
 # =====================================
 # Footer
