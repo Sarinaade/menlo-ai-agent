@@ -33,6 +33,41 @@ st.set_page_config(
     page_icon="🎓",
     layout="wide"
 )
+st.markdown("""
+<style>
+.stApp {
+    background: linear-gradient(135deg, #020617 0%, #0f172a 45%, #1e1b4b 100%);
+    color: white;
+}
+
+.block-container {
+    max-width: 1200px;
+    padding-top: 1rem;
+    padding-bottom: 6rem;
+}
+
+h1, h2, h3, p {
+    color: white;
+}
+
+[data-testid="stSidebar"] {
+    background: #020617;
+}
+
+[data-testid="stChatMessageContent"] {
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(99,102,241,.35);
+    border-radius: 20px;
+    padding: 16px 20px;
+}
+
+div[data-testid="stChatInput"] {
+    background: #0f172a;
+    border: 2px solid #6366f1;
+    border-radius: 18px;
+}
+</style>
+""", unsafe_allow_html=True)
 
 st.markdown("""
 <style>
