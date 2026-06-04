@@ -11,6 +11,8 @@ SEED_URLS = [
     "https://www.menlo.edu/academics/",
     "https://www.menlo.edu/student-life/",
     "https://www.menlo.edu/admissions/",
+    "https://www.menlo.edu/about/leadership/",
+    "https://www.menlo.edu/life-at-menlo/"
 ]
 
 OUT = Path("data/menlo_pages.json")
