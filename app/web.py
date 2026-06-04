@@ -80,6 +80,26 @@ div[data-testid="stChatInput"] {
 iframe {
     background: #020617 !important;
 }
+header[data-testid="stHeader"] {
+    background: #020617 !important;
+    height: 0rem !important;
+}
+
+div[data-testid="stToolbar"] {
+    display: none !important;
+}
+
+div[data-testid="stDecoration"] {
+    display: none !important;
+}
+
+[data-testid="stAppViewContainer"] > .main {
+    background: linear-gradient(135deg, #020617 0%, #0f172a 45%, #1e1b4b 100%) !important;
+}
+
+section[data-testid="stSidebar"] {
+    background: #020617 !important;
+}
 
 </style>
 
